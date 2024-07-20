@@ -3,6 +3,7 @@ let resetBtn = document.querySelector(".resetbtn");
 let newGameBtn = document.querySelector(".newGame");
 let msgcontainer = document.querySelector(".msg-container");
 let Msg = document.querySelector(".msg");
+let inform = document.querySelector(".inform");
 let count=0;
 let turnX = true;
 
@@ -14,6 +15,7 @@ const resetgame = () => {
     turnX = true;
     enableboxes();
     msgcontainer.classList.add("hide");
+    inform.innerText = "Start The Game By Clicking The Boxes";
 }
 
 boxs.forEach((box) => {
@@ -49,6 +51,7 @@ const showWinner = (winner) => {
     Msg.innerText = `Congratulations winner is ${winner}`;
     disableboxes();
     msgcontainer.classList.remove("hide");
+    inform.innerText = "To continue click on New Game or Reset Game";
 }
 const checkWinner = () => {
     for( let pattern of winpatterns) {
